@@ -16,9 +16,40 @@
 	
 #container {
 	background:green;
+	display:flex;
+	flex-direction:column;
+}
+
+#outputLayout{
+background: yellow;
+}
+
+#inputLayout{
+background: blue;
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+}
+
+.rowOfButtons{
+
+display:flex;
+flex-direction:row;
+
 }
 
 
+
+#buttonLayout{
+
+}
+
+.row{}
+
+.btn {
+width:20%;
+
+}
 
 </style>
 
@@ -37,16 +68,71 @@
 <!-- setup graphics & buttons -->
 
 
-<div class="container-fluid">
+<center>
+
+<div class="container" align="center">
+	
+
 	<div class="row">
-<div id="container" class="col-xs-6">
-<div id="outputSection">
-	OUTPUT
-</div>
+<div id="container" class="col-md-8">
+<div id="outputLayout">
+	OUTPUT HERE
+
+</div> <!-- ouptput div -->
 <hr>
-<div id="inputSection">
-	INPUT SECTION
-</div> 
+<div id="inputLayout">
+	
+	<hr> 
+	<div id=buttonLayout class="col-md-8">
+	<!--<button type="button">Click Me!</button> -->
+	<div id="rowOne" class="rowOfButtons">
+	<button type="button" class="btn btn-lg" id="">F1</button>
+	<button type="button" class="btn btn-lg" id="">F2</button>
+	<button type="button" class="btn btn-lg" id="">F3</button>
+	<button type="button" class="btn btn-lg" id="">F4</button>
+</div>
+<div id="rowTwo" class="rowOfButtons">
+
+	<button type="button" class="btn btn-lg" id="">7</button>
+	<button type="button" class="btn btn-lg" id="">8</button>
+	<button type="button" class="btn btn-lg" id="">9</button>
+	<button type="button" class="btn btn-lg" id="">/</button>
+	</div>
+<div id="rowThree" class="rowOfButtons">
+
+	<button type="button" class="btn btn-lg" id="">4</button>
+	<button type="button" class="btn btn-lg" id="">5</button>
+	<button type="button" class="btn btn-lg" id="">6</button>
+	<button type="button" class="btn btn-lg" id="">X</button>
+	</div>
+<div id="rowFour" class="rowOfButtons">
+
+	<button type="button" class="btn btn-lg" id="">1</button>
+	<button type="button" class="btn btn-lg" id="">2</button>
+	<button type="button" class="btn btn-lg" id="">3</button>
+	<button type="button" class="btn btn-lg" id="">-</button>
+	</div>
+<div id="rowFive" class="rowOfButtons">
+
+	<button type="button" class="btn btn-lg" id="">7</button>
+	<button type="button" class="btn btn-lg" id="">8</button>
+	<button type="button" class="btn btn-lg" id="">9</button>
+	<button type="button" class="btn btn-lg" id="">+</button>
+	</div>
+<div id="rowSix" class="rowOfButtons">
+
+	<button type="button" class="btn btn-lg" id="zero">0</button>
+	<button type="button" class="btn btn-lg" id="decimal">.</button>
+	<button type="button" class="btn btn-lg" id="equal">=</button>
+	<button type="button" class="btn btn-lg" id="pound">C</button>
+
+</div>
+</div> <!-- button layout-->
+
+
+
+
+</div>  <!-- input layout -->
 
 
 
@@ -57,6 +143,7 @@
 
 
 </div><!-- container fluid -->
+</center>
 
 
 
