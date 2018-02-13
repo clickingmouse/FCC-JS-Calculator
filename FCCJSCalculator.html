@@ -18,6 +18,7 @@
 	background:green;
 	display:flex;
 	flex-direction:column;
+	width:50%;
 }
 
 #outputLayout{
@@ -27,8 +28,10 @@ background: yellow;
 #inputLayout{
 background: blue;
 display:flex;
-flex-direction:row;
-flex-wrap:wrap;
+
+/*f
+lex-direction:row;
+flex-wrap:wrap; */
 }
 
 .rowOfButtons{
@@ -48,12 +51,24 @@ flex-direction:row;
 
 .btn {
 width:20%;
+justify-content: center;
 
 }
 
 </style>
-
+<!-- ------------------------------------------------------------------------------ -->
 <script>
+function pushBuffer(selection){
+
+console.log("selection");
+}
+	buffer=[];
+	$(document).ready(function(){
+
+
+
+
+});
 
 	
 </script>
@@ -74,10 +89,11 @@ width:20%;
 	
 
 	<div class="row">
-<div id="container" class="col-md-8">
+<div id="container" class="col-">
 <div id="outputLayout">
+	<div id=outputBox>
 	OUTPUT HERE
-
+</div> <!-- ourpur box -->
 </div> <!-- ouptput div -->
 <hr>
 <div id="inputLayout">
@@ -86,45 +102,39 @@ width:20%;
 	<div id=buttonLayout class="col-md-8">
 	<!--<button type="button">Click Me!</button> -->
 	<div id="rowOne" class="rowOfButtons">
-	<button type="button" class="btn btn-lg" id="">F1</button>
-	<button type="button" class="btn btn-lg" id="">F2</button>
-	<button type="button" class="btn btn-lg" id="">F3</button>
-	<button type="button" class="btn btn-lg" id="">F4</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('F1')" id="">F1</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('F2')"  id="">F2</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('F3')"  id="">F3</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('F4')"  id="">F4</button>
 </div>
 <div id="rowTwo" class="rowOfButtons">
 
-	<button type="button" class="btn btn-lg" id="">7</button>
-	<button type="button" class="btn btn-lg" id="">8</button>
-	<button type="button" class="btn btn-lg" id="">9</button>
-	<button type="button" class="btn btn-lg" id="">/</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('7')"  id="">7</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('8')"  id="">8</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('9')"  id="">9</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('')"  id="">/</button>
 	</div>
 <div id="rowThree" class="rowOfButtons">
 
-	<button type="button" class="btn btn-lg" id="">4</button>
-	<button type="button" class="btn btn-lg" id="">5</button>
-	<button type="button" class="btn btn-lg" id="">6</button>
-	<button type="button" class="btn btn-lg" id="">X</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('4')"  id="">4</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('5')"  id="">5</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('6')"  id="">6</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('7')"  id="">X</button>
 	</div>
 <div id="rowFour" class="rowOfButtons">
 
-	<button type="button" class="btn btn-lg" id="">1</button>
-	<button type="button" class="btn btn-lg" id="">2</button>
-	<button type="button" class="btn btn-lg" id="">3</button>
-	<button type="button" class="btn btn-lg" id="">-</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('1')"  id="">1</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('2')"  id="">2</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('3')"  id="">3</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('-')"  id="">-</button>
 	</div>
-<div id="rowFive" class="rowOfButtons">
 
-	<button type="button" class="btn btn-lg" id="">7</button>
-	<button type="button" class="btn btn-lg" id="">8</button>
-	<button type="button" class="btn btn-lg" id="">9</button>
-	<button type="button" class="btn btn-lg" id="">+</button>
-	</div>
 <div id="rowSix" class="rowOfButtons">
 
-	<button type="button" class="btn btn-lg" id="zero">0</button>
-	<button type="button" class="btn btn-lg" id="decimal">.</button>
-	<button type="button" class="btn btn-lg" id="equal">=</button>
-	<button type="button" class="btn btn-lg" id="pound">C</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('0')" id="zero">0</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('.')" id="decimal">.</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('=')" id="equal">=</button>
+	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('C')" id="pound">C</button>
 
 </div>
 </div> <!-- button layout-->
