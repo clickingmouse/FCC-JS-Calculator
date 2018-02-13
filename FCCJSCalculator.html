@@ -10,8 +10,10 @@
 
 
 
-
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src="jquery_source.js"></script>
+<script src="https://use.fontawesome.com/2605df8b93.js"></script>
 <style>
 	
 #container {
@@ -60,13 +62,15 @@ justify-content: center;
 <script>
 function pushBuffer(selection){
 
-console.log("selection");
+console.log(selection);
 }
 	buffer=[];
 	$(document).ready(function(){
 
 
-
+$("#F1").click(function() {
+  alert( "Handler for .click() called." );
+});
 
 });
 
@@ -76,7 +80,7 @@ console.log("selection");
 </head>
 <body>
 
-<script src="https://use.fontawesome.com/2605df8b93.js"></script>
+
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
@@ -102,7 +106,7 @@ console.log("selection");
 	<div id=buttonLayout class="col-md-8">
 	<!--<button type="button">Click Me!</button> -->
 	<div id="rowOne" class="rowOfButtons">
-	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('F1')" id="">F1</button>
+	<button type="button" class="btn btn-lg btn-primary"  id="F1">F1</button>
 	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('F2')"  id="">F2</button>
 	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('F3')"  id="">F3</button>
 	<button type="button" class="btn btn-lg btn-primary" onclick="pushBuffer('F4')"  id="">F4</button>
