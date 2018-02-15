@@ -95,6 +95,7 @@ console.log("F1 clicked");
 
 $(".btn").click(function() {  //alert( "Handler for .click() called." );	
 console.log("A button is clicked");
+var inputStr="";
 var theID = $(this).attr('ID');
 var theClass =$(this).attr('class').split(' ');
 console.log("ID is " +theID);
@@ -115,17 +116,30 @@ inputBuffer[inputBuffer.length] = inputStr;
 }
 
 
-if (inputBuffer.length>0)
+else if (inputBuffer.length>0)
 {
 console.log("do some tests");
 
-if ( isNaN(inputBuffer[inputBuffer.length-1] ) && inputBuffer[inputBuffer.length-1]!="." ) {
+
+
+if (  theClass[3] == "operand" && isNaN(inputBuffer[inputBuffer.length-1])  && inputBuffer[inputBuffer.length-1]!="." ) {
 console.log("last input is not a number");
 
 inputBuffer[inputBuffer.length-1] = inputStr;
 
-} else {
+
+} else if (  theClass[3] == "operand") {
+
+inputBuffer[inputBuffer.length] = inputStr;
+}
+
+
+else {
+
+	//inputStr+=inputStr;
+
 	inputBuffer[inputBuffer.length] = inputStr;
+      
 }
 
 
