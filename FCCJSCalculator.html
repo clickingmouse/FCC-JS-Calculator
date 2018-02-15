@@ -108,6 +108,9 @@ console.log(inputStr);
 if (theID == "C"){
 	inputBuffer=[];
 	inputStr="";
+	result =0;
+	$("#outputBox").html("0");
+
 }
 
 /* if Buffer ie empty*/
@@ -132,7 +135,73 @@ inputBuffer[inputBuffer.length-1] = inputStr;
 
 inputBuffer[inputBuffer.length] = inputStr;
 }
+else if (theClass[3] == "equate" )
+{
+console.log("Proces buffeR!");
 
+var bufferArr=[];
+var tmpStr =""
+for (var i = 0; i<inputBuffer.length; i++){
+
+//	if (isNaN(inputBuffer[i]) &&  inputBuffer!= "." ) {
+console.log (/\D/.test(inputBuffer[i]) + " for " + inputBuffer[i]);
+	if (/\D/.test(inputBuffer[i]) &&  inputBuffer[i] !== "." ) {
+
+	bufferArr[bufferArr.length] = parseFloat(tmpStr);
+	console.log("CLEAR");
+	tmpStr ="";
+	}
+
+	//if (inputBuffer[i] != )
+	console.log("inserting "+ inputBuffer[i] +"to" + tmpStr);
+
+tmpStr= tmpStr + inputBuffer[i];
+
+if (inputBuffer[i] == "+" || inputBuffer[i] == "-" || inputBuffer[i] =="X" || inputBuffer[i] =="/" ){  
+bufferArr[bufferArr.length] = tmpStr;
+	tmpStr ="";
+	console.log("clear after see operand")
+}
+
+
+
+}// for
+// last entry not catched
+bufferArr[bufferArr.length] = parseFloat(tmpStr);
+console.log("after processing - Arr::" +bufferArr);
+
+
+
+
+
+// do work herer -- perform operations
+var result=0;;
+var result = bufferArr[0];
+for (var j=0; j< bufferArr.length; j++){
+	console.log("inside forloop"+ j);
+var num1 = result;
+if (bufferArr[j]== "+" ) {
+result = result + bufferArr[j+1];
+}//if
+
+if (bufferArr[j]=="-" ) {
+result = result - bufferArr[j+1];
+}//if
+
+if (bufferArr[j]=="/" ) {
+result = result / bufferArr[j+1];
+}//if
+if (bufferArr[j]=="X" ) {
+	console.log("multiply");
+result = result * bufferArr[j+1];
+}//if
+
+
+}// for j
+$("#outputBox").html(result);
+//$("#bufferContentsArea").html(inputBuffer);
+console.log("result::::::::" +result);
+} // if equate
 
 else {
 
@@ -140,7 +209,7 @@ else {
 
 	inputBuffer[inputBuffer.length] = inputStr;
       
-}
+} 
 
 
 
@@ -192,10 +261,11 @@ console.log("buffer:::" + inputBuffer);
 <div id="container" class="col-">
 <div id="outputLayout">
 	<div id="outputBox">
-	OUTPUT HERE
+	0
+	</div> <!-- ourpur box -->
+
 	<div id="bufferContentsArea"> Entered/Buffered Text Goes Here
 	</div>
-</div> <!-- ourpur box -->
 </div> <!-- ouptput div -->
 <hr>
 <div id="inputLayout">
@@ -221,7 +291,7 @@ console.log("buffer:::" + inputBuffer);
 	<button type="button" class="btn btn-lg btn-primary numeral" onclick="pushBuffer('4')"  id="4">4</button>
 	<button type="button" class="btn btn-lg btn-primary numeral" onclick="pushBuffer('5')"  id="5">5</button>
 	<button type="button" class="btn btn-lg btn-primary numeral" onclick="pushBuffer('6')"  id="6">6</button>
-	<button type="button" class="btn btn-lg btn-primary operand" onclick="pushBuffer('7')"  id="X">X</button>
+	<button type="button" class="btn btn-lg btn-primary operand" onclick="pushBuffer('X')"  id="X">X</button>
 	</div>
 <div id="rowFour" class="rowOfButtons">
 
@@ -235,7 +305,7 @@ console.log("buffer:::" + inputBuffer);
 
 	<button type="button" class="btn btn-lg btn-primary numeral" onclick="pushBuffer('0')" id="0">0</button>
 	<button type="button" class="btn btn-lg btn-primary numeral" onclick="pushBuffer('.')" id=".">.</button>
-	<button type="button" class="btn btn-lg btn-primary numeral" onclick="pushBuffer('=')" id="=">=</button>
+	<button type="button" class="btn btn-lg btn-primary equate" onclick="pushBuffer('=')" id="=">=</button>
 	<button type="button" class="btn btn-lg btn-primary operand" onclick="pushBuffer('+')" id="+">+</button>
 
 </div>
